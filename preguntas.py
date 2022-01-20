@@ -21,7 +21,14 @@ def pregunta_01():
     214
 
     """
-    return
+    data = open('C:\Users\larbo\github-classroom\classroom-fundamentos-de-analitica\lab---python-basico-laarboledaco\data.csv', 'r').readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split() for row in data]
+    data = [row[1] for row in data]
+    sum = 0
+    for row in data:
+        sum += int(row)
+    return sum
 
 
 def pregunta_02():
@@ -39,7 +46,20 @@ def pregunta_02():
     ]
 
     """
-    return
+    data = [row[0:-1] for row in data]
+    data = [row.split() for row in data]
+    data = [row[0] for row in data]
+    conjuntoUnico = set(data)
+    diccionario = {}
+    respuesta = []
+    for clave in conjuntoUnico:
+        diccionario[clave] = 0
+    for row in data:
+        diccionario[row] += 1
+    clavesOrdenadas = sorted(diccionario)
+    for clave in clavesOrdenadas:
+        respuesta.append(clave + "," + str(diccionario[clave]))
+    return respuesta
 
 
 def pregunta_03():
