@@ -21,7 +21,7 @@ def pregunta_01():
     214
 
     """
-    data = open('lab---python-basico-laarboledaco\data.csv', 'r').readlines()
+    data = open(r"C:\Users\larbo\github-classroom\classroom-fundamentos-de-analitica\lab---python-basico-laarboledaco\data.csv", "r").readlines()
     data = [row[0:-1] for row in data]
     data = [row.split() for row in data]
     data = [row[1] for row in data]
