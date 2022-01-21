@@ -53,18 +53,17 @@ def pregunta_02():
     data = [row[0] for row in data]
     conjuntoUnico = set(data)
     diccionario = {}
-    respuesta = "[\n"
+    respuesta = []
     for clave in conjuntoUnico:
         diccionario[clave] = 0
     for row in data:
         diccionario[row] += 1
     clavesOrdenadas = sorted(diccionario)
     for clave in clavesOrdenadas:
-        respuesta += '("'+clave + '", ' + str(diccionario[clave])+'),\n'
-
-        #respuesta.append('("'+clave + '",' + str(diccionario[clave])+')')
+        #respuesta += '("'+clave + '", ' + str(diccionario[clave])+'),\n'
+        respuesta.append(clave + "," + str(diccionario[clave]))
     #print(respuesta)
-    respuesta += "]"
+
     print(respuesta)
     return respuesta
 
