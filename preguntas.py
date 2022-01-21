@@ -209,6 +209,7 @@ def pregunta_06():
     diccionario = {}
     respuesta = []
     print(conjuntoPalabras)
+    print(data)
     for letra in conjuntoPalabras:
         diccionario[letra] = []
     for letra in conjuntoPalabras:
