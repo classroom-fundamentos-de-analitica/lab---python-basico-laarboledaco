@@ -47,7 +47,7 @@ def pregunta_02():
     ]
 
     """
-    data = open("C:\\Users\\larbo\\github-classroom\\classroom-fundamentos-de-analitica\\lab---python-basico-laarboledaco\\data.csv", "r").readlines()
+    data = open("data.csv", "r").readlines()
     data = [row[0:-1] for row in data]
     data = [row.split() for row in data]
     data = [row[0] for row in data]
