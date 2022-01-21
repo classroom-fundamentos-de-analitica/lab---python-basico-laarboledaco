@@ -62,7 +62,7 @@ def pregunta_02():
     for clave in clavesOrdenadas:
         #respuesta += '("'+clave + '", ' + str(diccionario[clave])+'),\n'
         #tupla = (clave,str(diccionario[clave]))
-        respuesta.append((clave,str(diccionario[clave])))
+        respuesta.append((clave,diccionario[clave]))
     #print(respuesta)
     test = [
         ("A", 8),
