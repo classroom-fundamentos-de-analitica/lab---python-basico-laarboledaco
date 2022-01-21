@@ -412,14 +412,21 @@ def pregunta_12():
     }
 
     """
-    respuesta = []
+    listaSumar = []
+    respuesta = {}
     data = open("data.csv", "r").readlines()
     data = [row[0:-1] for row in data]
     data = [row.split() for row in data]
     print(data)
     data = [[row[0], sum([int(fila.split(":")[1]) for fila in row[4].split(",")])] for row in data]
     #[print(row[0]+ "," + str(row[1])) for row in data]
-    [respuesta.append( [row[0] , row[1]]) for row in data]
+    [listaSumar.append( [row[0] , row[1]]) for row in data]
+    print(listaSumar)
+    for fila in listaSumar:
+        keys = respuesta.keys()
+        if fila[0] in keys:
+            respuesta[fila[0]] += fila[1]
+        else:
+            respuesta[fila[0]] = fila[1]
     print(respuesta)
-    
     return respuesta
