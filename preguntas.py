@@ -256,7 +256,7 @@ def pregunta_07():
         for row in data:
             if row[0] == numero:
                 diccionario[numero].append(row[1])
-        respuesta.append((numero , diccionario[numero] ))
+        respuesta.append((int(numero) , diccionario[numero] ))
     print(respuesta)
     return respuesta
 
