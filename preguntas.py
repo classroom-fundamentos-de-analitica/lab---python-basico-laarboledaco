@@ -419,6 +419,6 @@ def pregunta_12():
     data = [row.split() for row in data]
     data = [[row[0], sum([int(fila.split(":")[1]) for fila in row[4].split(",")])] for row in data]
     for row in data:
-        respuesta[row[0]] = row[1]
+        respuesta[row[0]] = int(row[1])
     return respuesta
-    
+
