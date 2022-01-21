@@ -45,7 +45,7 @@ def pregunta_02():
         ("D", 6),
         ("E", 14),
     ]
-
+ 
     """
     data = open("data.csv", "r").readlines()
     data = [row[0:-1] for row in data]
@@ -61,6 +61,7 @@ def pregunta_02():
     clavesOrdenadas = sorted(diccionario)
     for clave in clavesOrdenadas:
         respuesta.append(clave + "," + str(diccionario[clave]))
+    print(respuesta)
     return respuesta
 
 
