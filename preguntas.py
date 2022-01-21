@@ -150,7 +150,32 @@ def pregunta_05():
     ]
 
     """
-    return
+    csv = open("data.csv", "r").readlines()
+    data = []
+    for line in csv:
+        data.append([e.strip() for e in line.split("\t") ])
+
+    letters = {}
+    for row in data:
+        letter = row[0]
+        amount = int(row[1])
+        if letter not in letters:
+            letters[letter] = [amount, amount]
+        else:
+            letterMinAndMax= letters[letter]
+            if (amount > letterMinAndMax[0]):
+                letterMinAndMax[0] = amount
+            elif (amount < letterMinAndMax[1]):
+                letterMinAndMax[1] = amount
+
+    sortedLetters = {k: letters[k] for k in sorted(letters)}
+
+    respuesta = []
+
+    for letter, minAndMax in sortedLetters.items():
+        respuesta.append(letter,minAndMax[0],minAndMax[1])
+    
+    return respuesta
 
 
 def pregunta_06():
