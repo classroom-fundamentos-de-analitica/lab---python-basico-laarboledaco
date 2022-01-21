@@ -72,7 +72,7 @@ def pregunta_02():
     ]
     print(type(test))
 
-    print(respuesta)
+    print(type(respuesta))
     return respuesta
 
 
