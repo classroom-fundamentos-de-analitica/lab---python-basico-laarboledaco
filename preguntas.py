@@ -60,7 +60,7 @@ def pregunta_02():
         diccionario[row] += 1
     clavesOrdenadas = sorted(diccionario)
     for clave in clavesOrdenadas:
-        respuesta.append(clave + "," + str(diccionario[clave]))
+        respuesta.append('"'+clave + '",' + str(diccionario[clave]))
     print(respuesta)
     return respuesta
 
