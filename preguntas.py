@@ -384,7 +384,22 @@ def pregunta_11():
 
 
     """
-    return
+    data = []
+    csv = open("data.csv", "r").readlines()
+    for line in csv:
+        data.append([e.strip() for e in line.split("\t") ])
+    count = {}
+    for row in data:
+        quantity = int(row[1])
+        letters = row[3].split(",")
+        for letter in letters:
+            if letter not in count:
+                count[letter] = 0
+            count[letter] += quantity
+    
+    respuesta = {k: count[k] for k in sorted(count)}
+    print(respuesta)
+    return respuesta
 
 
 def pregunta_12():
