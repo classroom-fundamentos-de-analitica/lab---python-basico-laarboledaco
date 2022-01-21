@@ -29,7 +29,6 @@ def pregunta_01():
     sum = 0
     for row in data:
         sum += int(row)
-    print(sum)
     return sum
 
 
@@ -209,8 +208,6 @@ def pregunta_06():
     conjuntoPalabras = sorted(set([row[0] for row in data]))
     diccionario = {}
     respuesta = []
-    print(conjuntoPalabras)
-    print(data)
     for letra in conjuntoPalabras:
         diccionario[letra] = []
     for letra in conjuntoPalabras:
@@ -398,7 +395,6 @@ def pregunta_11():
             count[letter] += quantity
     
     respuesta = {k: count[k] for k in sorted(count)}
-    print(respuesta)
     return respuesta
 
 
@@ -417,4 +413,12 @@ def pregunta_12():
     }
 
     """
-    return
+    respuesta = {}
+    data = open("data.csv", "r").readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split() for row in data]
+    data = [[row[0], sum([int(fila.split(":")[1]) for fila in row[4].split(",")])] for row in data]
+    for row in data:
+        respuesta[row[0]] = row[1]
+    return respuesta
+    
