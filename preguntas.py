@@ -173,7 +173,7 @@ def pregunta_05():
     respuesta = []
 
     for letter, minAndMax in sortedLetters.items():
-        respuesta.append(letter,minAndMax[0],minAndMax[1])
+        respuesta.append((letter,minAndMax[0],minAndMax[1]))
     
     return respuesta
 
