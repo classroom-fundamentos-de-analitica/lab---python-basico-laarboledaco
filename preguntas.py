@@ -79,7 +79,22 @@ def pregunta_03():
     ]
 
     """
-    return
+    data = open("data.csv", "r").readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split() for row in data]
+    data = [[row[0], row[1]] for row in data]
+    columnaLetras = [row[0] for row in data]
+    conjuntoUnico = set(columnaLetras)
+    diccionario = {}
+    respuesta =[]
+    for clave in conjuntoUnico:
+        diccionario[clave] = 0
+    for row in data:
+        diccionario[row[0]] += int(row[1])
+    clavesOrdenadas = sorted(diccionario)
+    for clave in clavesOrdenadas:
+        respuesta.append((clave , diccionario[clave]))
+    return respuesta
 
 
 def pregunta_04():
