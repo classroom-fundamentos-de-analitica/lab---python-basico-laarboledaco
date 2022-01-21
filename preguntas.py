@@ -428,5 +428,4 @@ def pregunta_12():
             respuesta[fila[0]] += fila[1]
         else:
             respuesta[fila[0]] = fila[1]
-    print(respuesta)
     return respuesta
