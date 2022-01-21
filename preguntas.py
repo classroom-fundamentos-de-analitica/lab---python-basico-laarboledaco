@@ -219,7 +219,6 @@ def pregunta_06():
         maximo = max(diccionario[letra])
         minimo = min(diccionario[letra])
         respuesta.append((letra, int(minimo),int(maximo)))
-    print(respuesta)
     return respuesta
 
 
@@ -244,7 +243,21 @@ def pregunta_07():
     ]
 
     """
-    return
+    data = open("data.csv", "r").readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split() for row in data]
+    data = [[row[1], row[0]] for row in data]
+    numeros = sorted(set([row[0] for row in data]))
+    diccionario = {}
+    respuesta = []
+    for numero in numeros:
+        diccionario[numero] = []
+    for numero in numeros:
+        for row in data:
+            if row[0] == numero:
+                diccionario[numero].append(row[1])
+        respuesta.append((numero , diccionario[numero] ))
+    return respuesta
 
 
 def pregunta_08():
