@@ -184,6 +184,7 @@ def pregunta_06():
     una clave y el valor despues del caracter `:` corresponde al valor asociado a la
     clave. Por cada clave, obtenga el valor asociado mas pequeño y el valor asociado mas
     grande computados sobre todo el archivo.
+     
 
     Rta/
     [
@@ -207,6 +208,7 @@ def pregunta_06():
     conjuntoPalabras = sorted(set([row[0] for row in data]))
     diccionario = {}
     respuesta = []
+    print(conjuntoPalabras)
     for letra in conjuntoPalabras:
         diccionario[letra] = []
     for letra in conjuntoPalabras:
