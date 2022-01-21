@@ -215,7 +215,7 @@ def pregunta_06():
                 diccionario[letra].append(row[1])
         maximo = max(diccionario[letra])
         minimo = min(diccionario[letra])
-        respuesta.append((letra, minimo,maximo))
+        respuesta.append((letra, int(minimo),int(maximo)))
     print(respuesta)
     return respuesta
 
