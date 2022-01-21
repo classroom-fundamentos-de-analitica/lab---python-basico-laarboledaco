@@ -363,6 +363,7 @@ def pregunta_10():
     data = [row.split() for row in data]
     data = [[row[0], str(len(row[3].split(","))), str(len(row[4].split(",")))] for row in data]
     [respuesta.append((row[0],row[1],row[2])) for row in data]
+    print(respuesta)
     return respuesta
 
 
