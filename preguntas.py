@@ -28,6 +28,7 @@ def pregunta_01():
     sum = 0
     for row in data:
         sum += int(row)
+    print(sum)
     return sum
 
 
