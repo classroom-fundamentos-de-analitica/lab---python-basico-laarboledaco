@@ -119,7 +119,20 @@ def pregunta_04():
     ]
 
     """
-    return
+    data = open("data.csv", "r").readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split() for row in data]
+    data = [row[2].split("-")[1] for row in data]
+    mesesDiferentes = sorted(set(data))
+    diccionario = {}
+    respuesta = []
+    for mes in mesesDiferentes:
+        diccionario[mes] = 0
+    for row in data:
+        diccionario[row] += 1
+    for key in diccionario:
+        respuesta.append((key ,diccionario[key]))
+    return respuesta
 
 
 def pregunta_05():
