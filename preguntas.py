@@ -12,6 +12,7 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 """
 import csv
+from urllib import response
 
 def pregunta_01():
     """
@@ -320,7 +321,23 @@ def pregunta_09():
     }
 
     """
-    return
+    data = open("data.csv", "r").readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split()[4].split(",") for row in data]
+    data = [column.split(":") for row in data for column in row]
+    conjuntoPalabras = sorted(set([row[0] for row in data]))
+    diccionario = {}
+    respuesta = {}
+    for letra in conjuntoPalabras:
+        diccionario[letra] = []
+    for letra in conjuntoPalabras:
+        total = 0
+        for row in data:
+            if row[0] == letra:
+                total += 1 
+        respuesta[letra] = total
+    print(respuesta)
+    return respuesta
 
 
 def pregunta_10():
