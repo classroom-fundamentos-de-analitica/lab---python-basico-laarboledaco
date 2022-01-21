@@ -12,7 +12,6 @@ Utilice el archivo `data.csv` para resolver las preguntas.
 
 """
 import csv
-from urllib import response
 
 def pregunta_01():
     """
@@ -413,14 +412,12 @@ def pregunta_12():
     }
 
     """
-    respuesta = {}
+    respuesta = []
     data = open("data.csv", "r").readlines()
     data = [row[0:-1] for row in data]
     data = [row.split() for row in data]
     data = [[row[0], sum([int(fila.split(":")[1]) for fila in row[4].split(",")])] for row in data]
-    for row in data:
-        respuesta[row[0]] = int(row[1])
-    print(data)
+    [respuesta.append( [row[0] , row[1]]) for row in data]
     print(respuesta)
+    
     return respuesta
-
