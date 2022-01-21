@@ -63,6 +63,14 @@ def pregunta_02():
         #respuesta += '("'+clave + '", ' + str(diccionario[clave])+'),\n'
         respuesta.append('"'+clave + '", ' + str(diccionario[clave]))
     #print(respuesta)
+    test = [
+        ("A", 8),
+        ("B", 7),
+        ("C", 5),
+        ("D", 6),
+        ("E", 14)
+    ]
+    print(test)
     print(respuesta)
     return respuesta
 
