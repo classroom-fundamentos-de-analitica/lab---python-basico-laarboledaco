@@ -215,7 +215,7 @@ def pregunta_06():
     for letra in conjuntoPalabras:
         for row in data:
             if row[0] == letra:
-                diccionario[letra].append(row[1])
+                diccionario[letra].append(int(row[1]))
         maximo = max(diccionario[letra])
         minimo = min(diccionario[letra])
         respuesta.append((letra, int(minimo),int(maximo)))
