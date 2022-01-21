@@ -418,8 +418,8 @@ def pregunta_12():
     data = [row.split() for row in data]
     print(data)
     data = [[row[0], sum([int(fila.split(":")[1]) for fila in row[4].split(",")])] for row in data]
-    [print(row[0]+ "," + str(row[1])) for row in data]
-    #[respuesta.append( [row[0] , row[1]]) for row in data]
-    #print(respuesta)
+    #[print(row[0]+ "," + str(row[1])) for row in data]
+    [respuesta.append( [row[0] , row[1]]) for row in data]
+    print(respuesta)
     
     return respuesta
