@@ -200,7 +200,23 @@ def pregunta_06():
     ]
 
     """
-    return
+    data = open("data.csv", "r").readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split()[4].split(",") for row in data]
+    data = [column.split(":") for row in data for column in row]
+    conjuntoPalabras = sorted(set([row[0] for row in data]))
+    diccionario = {}
+    respuesta = []
+    for letra in conjuntoPalabras:
+        diccionario[letra] = []
+    for letra in conjuntoPalabras:
+        for row in data:
+            if row[0] == letra:
+                diccionario[letra].append(row[1])
+        maximo = max(diccionario[letra])
+        minimo = min(diccionario[letra])
+        respuesta.append((letra, minimo,maximo))
+    return respuesta
 
 
 def pregunta_07():
