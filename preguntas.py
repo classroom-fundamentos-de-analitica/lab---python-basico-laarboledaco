@@ -336,7 +336,6 @@ def pregunta_09():
             if row[0] == letra:
                 total += 1 
         respuesta[letra] = total
-    print(respuesta)
     return respuesta
 
 
@@ -358,6 +357,13 @@ def pregunta_10():
 
 
     """
+    respuesta = []
+    data = open("data.csv", "r").readlines()
+    data = [row[0:-1] for row in data]
+    data = [row.split() for row in data]
+    data = [[row[0], str(len(row[3].split(","))), str(len(row[4].split(",")))] for row in data]
+    print(data)
+    #[print(','.join(row)) for row in data]
     return
 
 
